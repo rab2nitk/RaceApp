@@ -1,0 +1,22 @@
+<apex:page controller="importDataFromCSVController">
+    <apex:form >
+        <apex:pagemessages />
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="4"> 
+                  <apex:inputFile value="{!csvFileBody}"  filename="{!csvAsString}"/>
+                  <apex:commandButton value="Import Input File" action="{!importCSVFile}"/>
+                  
+            </apex:pageBlockSection>
+                   <apex:repeat value="{!mazeMatrix}" var="str">
+                       <apex:outputText value="{!str}" />
+                        <br />
+                  </apex:repeat>    
+           Result order from Destination :  {!destination} to Source:  {!sourceT} <br />                   
+        
+                   <apex:repeat value="{!result}" var="str1">
+                       <apex:outputText value="{!str1}" />
+                        <br />
+                  </apex:repeat> 
+    </apex:pageBlock>
+   </apex:form>
+</apex:page>
